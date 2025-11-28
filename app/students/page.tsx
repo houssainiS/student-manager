@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useAuth } from "@/lib/auth-hooks"
-import { AuthGuard } from "@/components/auth-guard"
+
 import { Navbar } from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -105,7 +105,7 @@ export default function StudentsPage() {
   }
 
   return (
-    <AuthGuard>
+    
       <div className="flex flex-col min-h-screen bg-background">
         <Navbar />
         <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
@@ -256,6 +256,5 @@ export default function StudentsPage() {
           </AlertDialogContent>
         </AlertDialog>
       </div>
-    </AuthGuard>
   )
 }

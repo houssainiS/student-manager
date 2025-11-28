@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
-import { AuthGuard } from "@/components/auth-guard"
+
 import { Navbar } from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -85,32 +85,32 @@ export default function EditStudentPage() {
 
   if (loading) {
     return (
-      <AuthGuard requiredRole="admin">
+
         <div className="flex flex-col min-h-screen bg-background">
           <Navbar />
           <div className="flex items-center justify-center flex-1">
             <Spinner />
           </div>
         </div>
-      </AuthGuard>
+
     )
   }
 
   if (!formData) {
     return (
-      <AuthGuard requiredRole="admin">
+
         <div className="flex flex-col min-h-screen bg-background">
           <Navbar />
           <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto w-full">
             <p className="text-red-500">Student not found</p>
           </main>
         </div>
-      </AuthGuard>
+
     )
   }
 
   return (
-    <AuthGuard requiredRole="admin">
+
       <div className="flex flex-col min-h-screen bg-background">
         <Navbar />
         <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto w-full">
@@ -172,6 +172,6 @@ export default function EditStudentPage() {
           </div>
         </main>
       </div>
-    </AuthGuard>
+
   )
 }

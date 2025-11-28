@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { AuthGuard } from "@/components/auth-guard"
+
 import { Navbar } from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -57,7 +57,7 @@ export default function NewStudentPage() {
 
   return (
     // <AuthGuard requiredRole="admin">
-    <AuthGuard >
+
       <div className="flex flex-col min-h-screen bg-background">
         <Navbar />
         <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto w-full">
@@ -135,6 +135,6 @@ export default function NewStudentPage() {
           </div>
         </main>
       </div>
-    </AuthGuard>
+
   )
 }
