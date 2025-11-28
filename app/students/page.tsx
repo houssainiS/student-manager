@@ -14,6 +14,7 @@ import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { getStudents, getClasses, deleteStudent } from "./actions"
 import { Spinner } from "@/components/ui/spinner"
+import {  EmptyMedia, EmptyTitle, EmptyDescription } from "@/components/ui/empty"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -176,13 +177,18 @@ export default function StudentsPage() {
                 <Spinner />
               </div>
             ) : students.length === 0 ? (
-              <Empty
-                icon="Users"
-                title="No students found"
-                description={
-                  search || classFilter ? "Try adjusting your search or filter" : "No students have been added yet"
-                }
-              />
+              <Empty className="my-12">
+  <EmptyMedia variant="icon">
+    {/* put an icon component here if you want */}
+  </EmptyMedia>
+  <EmptyTitle>No students found</EmptyTitle>
+  <EmptyDescription>
+    {search || classFilter
+      ? "Try adjusting your search or filter"
+      : "No students have been added yet"}
+  </EmptyDescription>
+</Empty>
+
             ) : (
               <Card>
                 <CardContent className="p-0">
